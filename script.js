@@ -20,15 +20,16 @@ let generateGrad = () => {
     let angle = Math.floor(Math.random() * 360);
     outputColor.style.background = `linear-gradient(${angle}deg, ${colorOne}, ${colorTwo})`;
     outputCode.value = `background: linear-gradient(${angle}deg, ${colorOne}, ${colorTwo});`;
+    document.querySelector("body").style.background = `linear-gradient(${angle}deg, ${colorOne}, ${colorTwo})`;
 }
 
 copyBtn.addEventListener("click", () => {
     outputCode.select();
     document.execCommand("copy");
-    copyMessage.style.display = "block"
+    copyMessage.style.bottom = "-15%"
     copyMessage.style.opacity = "1",
     setTimeout(function(){
-        copyMessage.style.display = "none"
+    copyMessage.style.bottom = "-30%"
         copyMessage.style.opacity = "0"
     }, 1500)
 });
